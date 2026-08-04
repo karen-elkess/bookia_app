@@ -1,0 +1,23 @@
+
+{
+
+    "welcome_text":"Order Your Book Now!",
+    "darkMode":"Dark Mode",
+    "englishLanguage":"English Language",
+    "login": "Login",
+    "register":"Register",
+    "loginWelcomeSentence":"Welcome back! Glad to see you, Again!",
+    "emailHintText":"Enter Your Email",
+    "passwordHintText":"Enter your password",
+    "or":"or",
+    "dontHaveAccount":"Don’t have an account?",
+    "registerNow":"Register Now",
+    "forgotPassword":"Forgot Password ?",
+    "HelloRegisterSentence":"Hello! Register to get started",
+    "username":"Username",
+    "email":"Email",
+    "confirmPassword":"Confirm password",
+    "alreadyHave":"Already have an account ? ",
+    "loginNow":"Login Now"
+
+}

@@ -1,0 +1,23 @@
+{
+
+    "welcome_text":"احجز كتابك الأن !",
+    "darkMode":"الوضع الداكن",
+    "englishLanguage":" اللغة الانجليزية",
+    "login": "تسجيل  الدخول",
+    "register":"انشاء حساب",
+    "loginWelcomeSentence":"مرحبًا بعودتك!\nسعيد برؤيتك مجددًا!",
+    "emailHintText": "أدخل بريدك الإلكتروني",
+    "passwordHintText":"ادخل كلمة السر الخاصة بك",
+    "or":"او",
+    "dontHaveAccount":"لا تملك حسابًا ؟",
+    "registerNow":"سجل الان",
+    "forgotPassword":"هل نسيت كلمة المرور؟",
+    "HelloRegisterSentence":"مرحبا ! سجل للبدأ",
+    "username":"اسم المستخدم",
+    "email":"الايميل",
+    "confirmPassword":"تأكيد كلمة السر",
+    "alreadyHave":"هل لديك حساب بالفعل ؟",
+    "loginNow":"سجل الدخول الان !"
+
+
+}

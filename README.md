@@ -117,11 +117,6 @@ flutter run
 
 ---
 
-<div align="center">
-
-Made with ❤️ using Flutter
-
-</div>
 
 
 
@@ -138,5 +133,4 @@ https://github.com/user-attachments/assets/6584323d-4299-4625-88bc-ac73afa4b9e5
 https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
 
 
-=======
->>>>>>> cf17e71 (feat: implement password visibility toggle, routing system, and navigation extensions)
+

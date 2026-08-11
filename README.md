@@ -2,18 +2,25 @@
 
 # 📚 Bookia
 
-### ✨ A modern Flutter book app with a complete authentication experience ✨
+### A modern Flutter book app with a complete authentication experience
 
 <p>
   <img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
   <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
   <img src="https://img.shields.io/badge/State%20Management-Cubit-A6247D?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Made%20with-Love-FF69B4?style=for-the-badge" />
 </p>
 
-  *A Flutter authentication app built with clean, scalable architecture*
+A Flutter authentication app built with clean, scalable architecture
 
 </div>
+
+---
+
+## 💡 About
+
+**Bookia** is a Flutter app built to practice a complete authentication flow — 🖐️ Welcome, 🔑 Login, and 📝 Register screens — all connected to a real API.
+
+The goal wasn't just to make it *work*, but to make it **clean**: separating API calls, state management, and UI into their own layers instead of mixing everything together. 🧩
 
 ---
 
@@ -28,14 +35,6 @@ https://github.com/user-attachments/assets/fca9c7a2-65d9-4a3f-bcb8-ad020f35e474
 https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
 
 </div>
-
----
-
-## 💡 About
-
-**Bookia** is a Flutter app built to practice a complete authentication flow — 🖐️ Welcome, 🔑 Login, and 📝 Register screens — all connected to a real API.
-
-The goal wasn't just to make it *work*, but to make it **clean**: separating API calls, state management, and UI into their own layers instead of mixing everything together. 🧩
 
 ---
 
@@ -130,6 +129,9 @@ cd bookia_app
 flutter pub get
 flutter run
 ```
+
+---
+
 ## 🔧 Code Generation
 
 If you make changes that require code generation, run the following commands:
@@ -144,12 +146,9 @@ dart run build_runner build --delete-conflicting-outputs
 dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
 ```
 
----
-
 <div align="center">
 
-### 🌟 Still learning, still building 🌟
-
-Thanks for checking out this project! 🚀
+**Thanks for checking out this project! 🚀**
 
 </div>
+

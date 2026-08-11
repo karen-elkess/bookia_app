@@ -50,8 +50,11 @@ dart run build_runner watch --delete-conflicting-outputs
 dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
 ```
 
+<<<<<<< HEAD
 
 
 
 https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17
 
+=======
+>>>>>>> cf17e71 (feat: implement password visibility toggle, routing system, and navigation extensions)

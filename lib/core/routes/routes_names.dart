@@ -1,0 +1,12 @@
+
+
+class RoutesNames {
+
+  static const String welcomeScreen ="welcomeScreen" ;
+  static const String loginScreen = "loginScreen";
+  static const String registerScreen = "registerScreen";
+  static const String homeScreen = "homeScreen";
+
+  //Null get name => null;
+
+}

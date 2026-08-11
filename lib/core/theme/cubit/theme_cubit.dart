@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookia_app/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+
 
 part 'theme_state.dart';
 

@@ -1,60 +1,138 @@
 # 📚 Bookia App
 
-A modern, responsive Mobile Application built with **Flutter** for book enthusiasts. The app features a full authentication flow, custom localization, responsive layouts, and dynamic theme handling (Light/Dark mode).
+<div align="center">
+
+**Bookia** is a full-featured book application built with Flutter, following a clean and organized architecture that separates Data and Presentation layers.
+
+</div>
 
 ---
 
 ## ✨ Features
 
-- 🌐 **Localization Support:** Multi-language support (Arabic & English) powered by `easy_localization`.
-- 🌓 **Dynamic Theme:** Light and Dark mode switching managed via `Flutter Bloc / Cubit`.
-- 📱 **Responsive Design:** Adaptive UI across various screen sizes using `flutter_screenutil`.
-- 🚀 **Native Splash Screen:** Customized native splash screen transition.
-- 📖 **Onboarding Flow:** Smooth introductory onboarding user experience.
-- 🔐 **Authentication UI:** Complete design for Welcome, Login, and Register screens.
-- 🛠️ **Clean Architecture:** Organized structure following the `Feature-first` pattern.
+- 🔐 **Complete Authentication Flow** — Welcome, Login, Register
+- 🎨 **Theme Management** — Handled via a dedicated Theme Cubit
+- 🌐 **API Integration** — Powered by Dio with a logging Interceptor (Pretty Dio Logger)
+- 💾 **Persistent Login** — Token stored using SharedPreferences
+- 🧭 **Custom Navigation Extensions** — Simplified and clean screen navigation
+- 🏗️ **Clean Architecture** — Full separation between Data / Presentation / Cubit for each feature
 
 ---
 
-## 🛠️ Tech Stack & Libraries
+## 🏗️ Project Structurelib
+├── core
+│ ├── helper # Extensions & Helper functions
+│ ├── routes # App Routing (onGenerateRoute)
+│ ├── theme
+│ │ └── cubit # Theme Cubit (Light/Dark)
+│ └── widgets # Shared/Reusable Widgets
+│
+├── features
+│ ├── welcome
+│ │ └── presentation/ui/widgets
+│ │
+│ ├── login
+│ │ ├── cubit # LoginCubit + LoginState
+│ │ ├── data
+│ │ │ ├── model # Login Models
+│ │ │ └── repo # LoginRepo (API Calls)
+│ │ └── ui # Login Screen
+│ │
+│ ├── register
+│ │ ├── data
+│ │ │ ├── model
+│ │ │ └── repo # RegisterRepo (API Calls)
+│ │ └── presentations
+│ │ ├── cubit # RegisterCubit + RegisterState
+│ │ └── ui/widgets # Register Screen + Widgets
+│ │
+│ └── home
+│ ├── data
+│ └── presentation/ui # Home Screen
+│
+└── gen # Generated Files
 
-- **Framework:** [Flutter](https://flutter.dev/)
-- **State Management:** [Flutter Bloc / Cubit](https://pub.dev/packages/flutter_bloc)
-- **Localization:** [Easy Localization](https://pub.dev/packages/easy_localization)
-- **Screen Responsiveness:** [Flutter ScreenUtil](https://pub.dev/packages/flutter_screenutil)
-- **Code Generation:** [Build Runner](https://pub.dev/packages/build_runner)
 
 ---
 
-## ⚙️ Code Generation Commands
+## 🧠 Architecture
 
-If you modify translation assets or generated files, run the following commands:
+The project follows a **Feature-First Architecture**, where each feature (Login, Register, Home...) has:
 
-### 1. Easy Localization Generation (Keys)
+| Layer | Responsibility |
+|---|---|
+| **Data / Repo** | Direct communication with the API (Dio requests) |
+| **Data / Model** | Data representation (JSON Parsing) |
+| **Cubit** | State management (Loading, Success, Error) |
+| **UI** | Screens and user interaction |
+
+---
+
+## 🔑 Authentication Flow
+
+User Input → Cubit → Repo → Dio → API
+↓
+emit(State: Loading / Success / Error)
+↓
+BlocListener → UI Reaction
+
+
+After a successful Login/Register:
+1. The **Token** is extracted from the Response
+2. It gets stored in **SharedPreferences**
+3. Automatic navigation to the **Home Screen** using `pushNamedAndRemoveUntil`
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Flutter** | Core framework |
+| **Dio** | API communication |
+| **Pretty Dio Logger** | Request/Response tracking during development |
+| **flutter_bloc (Cubit)** | State management |
+| **SharedPreferences** | Local session data storage |
+
+---
+
+## 🚀 Getting Started
+
 ```bash
-dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
-## Code Generation
+# Clone the repository
+git clone <repo-url>
 
-To generate code automatically, run one of the following commands in the terminal:
+# Install dependencies
+flutter pub get
 
-//- **One-time build:**
-  ```bash
-  dart run build_runner build --delete-conflicting-outputs
-  ```
-//watch
-  ```bash
-dart run build_runner watch --delete-conflicting-outputs
+# Run the app
+flutter run
 ```
 
-  ```bash
-dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
-```
+---
 
-<<<<<<< HEAD
+## 🎥 Demo
+
+<!-- Video goes here -->
+
+---
+
+<div align="center">
+
+Made with ❤️ using Flutter
+
+</div>
 
 
 
 https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17
+
+
+
+
+https://github.com/user-attachments/assets/6584323d-4299-4625-88bc-ac73afa4b9e5
+https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
+
 
 =======
 >>>>>>> cf17e71 (feat: implement password visibility toggle, routing system, and navigation extensions)

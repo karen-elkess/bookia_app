@@ -1,140 +1,89 @@
-# 📚 Bookia App
+Markdown
+# 📚 Bookia - Book Store App
 
-<div align="center">
-
-**Bookia** is a full-featured book application built with Flutter, following a clean and organized architecture that separates Data and Presentation layers.
-
-</div>
+> A modern, responsive Flutter mobile application designed for browsing, discovering, and purchasing books with seamless API integration and smooth state management.
 
 ---
 
-## ✨ Features
+## 📌 About The Project
 
-- 🔐 **Complete Authentication Flow** — Welcome, Login, Register
-- 🎨 **Theme Management** — Handled via a dedicated Theme Cubit
-- 🌐 **API Integration** — Powered by Dio with a logging Interceptor (Pretty Dio Logger)
-- 💾 **Persistent Login** — Token stored using SharedPreferences
-- 🧭 **Custom Navigation Extensions** — Simplified and clean screen navigation
-- 🏗️ **Clean Architecture** — Full separation between Data / Presentation / Cubit for each feature
+**Bookia** is a feature-rich mobile app crafted to provide book lovers with an effortless browsing and shopping experience. Built using Flutter and Dart, the application demonstrates clean architecture principles, robust network request handling via Dio, and predictable state management using BLoC/Cubit.
 
 ---
 
-## 🏗️ Project Structurelib
-├── core
-│ ├── helper # Extensions & Helper functions
-│ ├── routes # App Routing (onGenerateRoute)
-│ ├── theme
-│ │ └── cubit # Theme Cubit (Light/Dark)
-│ └── widgets # Shared/Reusable Widgets
-│
-├── features
-│ ├── welcome
-│ │ └── presentation/ui/widgets
-│ │
-│ ├── login
-│ │ ├── cubit # LoginCubit + LoginState
-│ │ ├── data
-│ │ │ ├── model # Login Models
-│ │ │ └── repo # LoginRepo (API Calls)
-│ │ └── ui # Login Screen
-│ │
-│ ├── register
-│ │ ├── data
-│ │ │ ├── model
-│ │ │ └── repo # RegisterRepo (API Calls)
-│ │ └── presentations
-│ │ ├── cubit # RegisterCubit + RegisterState
-│ │ └── ui/widgets # Register Screen + Widgets
-│ │
-│ └── home
-│ ├── data
-│ └── presentation/ui # Home Screen
-│
-└── gen # Generated Files
+## ✨ Key Features
 
+- **🔐 User Authentication:** Secure Login & Registration flows integrated with RESTful APIs.
+- **👁️ Password Visibility Toggle:** Interactive UI enhancement for user password input fields.
+- **🎨 Custom Dynamic Theming:** Light & Dark theme support managed via a dedicated Theme Cubit.
+- **🛣️ Clean Routing & Navigation:** Efficient app-wide navigation utilizing custom routing extensions and GoRouter.
+- **📱 Clean Feature-First Architecture:** Scalable codebase divided into feature modules and core utilities.
+- **🌐 Network API Handling:** Asynchronous network communication powered by Dio with error handling.
 
 ---
 
-## 🧠 Architecture
+## 🛠️ Tech Stack & Packages
 
-The project follows a **Feature-First Architecture**, where each feature (Login, Register, Home...) has:
-
-| Layer | Responsibility |
-|---|---|
-| **Data / Repo** | Direct communication with the API (Dio requests) |
-| **Data / Model** | Data representation (JSON Parsing) |
-| **Cubit** | State management (Loading, Success, Error) |
-| **UI** | Screens and user interaction |
-
----
-
-## 🔑 Authentication Flow
-
-User Input → Cubit → Repo → Dio → API
-↓
-emit(State: Loading / Success / Error)
-↓
-BlocListener → UI Reaction
-
-
-After a successful Login/Register:
-1. The **Token** is extracted from the Response
-2. It gets stored in **SharedPreferences**
-3. Automatic navigation to the **Home Screen** using `pushNamedAndRemoveUntil`
+| Category | Tools / Packages Used |
+| :--- | :--- |
+| **Framework & Language** | Flutter, Dart |
+| **State Management** | Flutter BLoC / Cubit |
+| **Networking & HTTP** | Dio |
+| **Navigation & Routing** | GoRouter / Custom Navigation Extensions |
+| **Architecture Pattern** | Feature-First Clean Architecture |
+| **Local / Theme State** | Hydrated Bloc / Cubit |
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Project Structure
 
-| Technology | Purpose |
-|---|---|
-| **Flutter** | Core framework |
-| **Dio** | API communication |
-| **Pretty Dio Logger** | Request/Response tracking during development |
-| **flutter_bloc (Cubit)** | State management |
-| **SharedPreferences** | Local session data storage |
+```text
+lib/
+├── core/
+│   ├── helper/          # Utility classes & helper functions
+│   ├── routes/          # Navigation & GoRouter configuration
+│   ├── theme/           # App themes & Theme Cubit
+│   └── widgets/         # Shared reusable UI widgets
+├── features/
+│   ├── welcome/         # Onboarding & Welcome screens
+│   ├── login/           # Authentication - Login module (Cubit, Data, UI)
+│   ├── register/        # Authentication - Register module (Cubit, Data, UI)
+│   └── home/            # Main dashboard & book feeds (Data, Presentation)
+└── gen/                 # Generated assets & code helper files
+🎥 App Demo & Video Preview
+Watch the video walkthrough to see the Bookia app in action, featuring authentication flows and UI navigation:
 
----
+[📺 Watch Full App Demo Video (Replace this with your Google Drive, LinkedIn, or YouTube video link)]
 
-## 🚀 Getting Started
-
-```bash
-# Clone the repository
-git clone <repo-url>
-
-# Install dependencies
-flutter pub get
-
-# Run the app
-flutter run
-```
-
----
-
-## 🎥 Demo
-
-<!-- Video goes here -->
-
----
-
-
-
-
-https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17
-
-
-
-
+(https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17)
 
 
 https://github.com/user-attachments/assets/fca9c7a2-65d9-4a3f-bcb8-ad020f35e474
 
 
 
-
-
-
 https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
+
+
+
+🚀 How to Run the Project
+Follow these steps to set up and run the app locally on your device or emulator:
+
+Prerequisites
+Flutter SDK installed (v3.0.0 or higher recommended).
+
+Android Studio or VS Code configured for Flutter development.
+
+
+To generate code automatically, run one of the following commands in the terminal:
+
+//- **One-time build:**
+  bash
+  dart run build_runner build --delete-conflicting-outputs
+
+```bash
+dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
+
 
 
 

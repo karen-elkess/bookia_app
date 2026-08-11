@@ -2,50 +2,85 @@
 
 # 📚 Bookia
 
-A Flutter book app with a full authentication flow — built while learning Flutter 🌱
+### ✨ A modern Flutter book app with a complete authentication experience ✨
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
-[![State Management](https://img.shields.io/badge/State%20Management-Cubit-blueviolet)](https://bloclibrary.dev)
+<p>
+  <img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/State%20Management-Cubit-A6247D?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Made%20with-Love-FF69B4?style=for-the-badge" />
+</p>
+
+  *A Flutter authentication app built with clean, scalable architecture*
 
 </div>
 
 ---
 
-## About
+## 🎬 Demo
 
-Bookia is a Flutter app I built to practice a complete authentication flow — Welcome, Login, and Register screens, connected to a real API.
+<div align="center">
 
-The goal wasn't just to make it work, but to organize the code properly: separating the API calls, the state management, and the UI into their own layers instead of mixing everything together.
+https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17
 
----
+https://github.com/user-attachments/assets/fca9c7a2-65d9-4a3f-bcb8-ad020f35e474
 
-## What's inside
+https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
 
-- **Login & Register** connected to a real backend using `Dio`
-- **State management** with `Cubit`, so the UI reacts to Loading / Success / Error states
-- **Token saved locally** with `SharedPreferences`, so the user stays logged in after closing the app
-- **Password visibility toggle** on the password fields
-- **Custom navigation extensions** to keep navigation code short and readable
-- **Request logging** with `PrettyDioLogger` to debug API calls easily during development
+</div>
 
 ---
 
-## Project structure
+## 💡 About
 
-Each feature (`login`, `register`, `home`...) is organized the same way:
+**Bookia** is a Flutter app built to practice a complete authentication flow — 🖐️ Welcome, 🔑 Login, and 📝 Register screens — all connected to a real API.
+
+The goal wasn't just to make it *work*, but to make it **clean**: separating API calls, state management, and UI into their own layers instead of mixing everything together. 🧩
+
+---
+
+## ✨ Features
+
+| | Feature | Description |
+|---|---|---|
+| 🔐 | **Authentication** | Login & Register connected to a real backend using `Dio` |
+| 🔄 | **State Management** | `Cubit` handles Loading / Success / Error states reactively |
+| 💾 | **Persistent Session** | Token saved locally with `SharedPreferences` — stay logged in after closing the app |
+| 👁️ | **Password Toggle** | Show/hide password with a single tap |
+| 🧭 | **Smooth Navigation** | Custom `BuildContext` extensions for clean, readable routing |
+| 🐛 | **Debug Friendly** | `PrettyDioLogger` prints every request & response beautifully in console |
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+<img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" />
+<img src="https://img.shields.io/badge/flutter__bloc-Cubit-A6247D?style=flat-square" />
+<img src="https://img.shields.io/badge/Dio-Networking-13AA52?style=flat-square" />
+<img src="https://img.shields.io/badge/SharedPreferences-Local%20Storage-FFA500?style=flat-square" />
+
+</div>
+
+---
+
+## 📂 Project Structure
+
+Each feature (`login`, `register`, `home`...) follows the same clean pattern:
 
 ```
 feature/
-├── data/
+├── 📁 data/
 │   ├── model/     → data models
 │   └── repo/       → API calls (Dio)
-├── cubit/          → app state (loading / success / error)
-└── ui/             → screens & widgets
+├── 📁 cubit/        → app state (loading / success / error)
+└── 📁 ui/           → screens & widgets
 ```
 
 <details>
-<summary>Full folder structure</summary>
+<summary>📦 <strong>Click to see the full folder structure</strong></summary>
 
 ```
 lib
@@ -68,27 +103,26 @@ lib
 
 ---
 
-## Tech Stack
+## 🔑 How Authentication Works
 
-- **Flutter** & **Dart**
-- **flutter_bloc** (Cubit) for state management
-- **Dio** for API requests
-- **shared_preferences** for local storage
-- **pretty_dio_logger** for debugging
+```
+📝 User Input
+      ↓
+🔄 Cubit emits Loading
+      ↓
+🌐 Repo sends request via Dio
+      ↓
+   ┌──────┴──────┐
+   ✅ Success      ❌ Error
+   ↓                ↓
+💾 Save Token      Show Error Dialog
+   ↓
+🏠 Navigate to Home
+```
 
 ---
 
-## Demo
-
-https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17
-
-https://github.com/user-attachments/assets/fca9c7a2-65d9-4a3f-bcb8-ad020f35e474
-
-https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
-
----
-
-## Getting Started
+## 🚀 Getting Started
 
 ```bash
 git clone <repo-url>
@@ -96,11 +130,26 @@ cd bookia_app
 flutter pub get
 flutter run
 ```
+## 🔧 Code Generation
+
+If you make changes that require code generation, run the following commands:
+
+**Build Runner** (for generated files):
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+**Localization Keys** (for translation keys):
+```bash
+dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
+```
 
 ---
 
 <div align="center">
 
-Still learning, still building 🚀
+### 🌟 Still learning, still building 🌟
+
+Thanks for checking out this project! 🚀
 
 </div>

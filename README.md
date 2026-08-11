@@ -1,89 +1,106 @@
-Markdown
-# 📚 Bookia - Book Store App
+<div align="center">
 
-> A modern, responsive Flutter mobile application designed for browsing, discovering, and purchasing books with seamless API integration and smooth state management.
+# 📚 Bookia
 
----
+A Flutter book app with a full authentication flow — built while learning Flutter 🌱
 
-## 📌 About The Project
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
+[![State Management](https://img.shields.io/badge/State%20Management-Cubit-blueviolet)](https://bloclibrary.dev)
 
-**Bookia** is a feature-rich mobile app crafted to provide book lovers with an effortless browsing and shopping experience. Built using Flutter and Dart, the application demonstrates clean architecture principles, robust network request handling via Dio, and predictable state management using BLoC/Cubit.
-
----
-
-## ✨ Key Features
-
-- **🔐 User Authentication:** Secure Login & Registration flows integrated with RESTful APIs.
-- **👁️ Password Visibility Toggle:** Interactive UI enhancement for user password input fields.
-- **🎨 Custom Dynamic Theming:** Light & Dark theme support managed via a dedicated Theme Cubit.
-- **🛣️ Clean Routing & Navigation:** Efficient app-wide navigation utilizing custom routing extensions and GoRouter.
-- **📱 Clean Feature-First Architecture:** Scalable codebase divided into feature modules and core utilities.
-- **🌐 Network API Handling:** Asynchronous network communication powered by Dio with error handling.
+</div>
 
 ---
 
-## 🛠️ Tech Stack & Packages
+## About
 
-| Category | Tools / Packages Used |
-| :--- | :--- |
-| **Framework & Language** | Flutter, Dart |
-| **State Management** | Flutter BLoC / Cubit |
-| **Networking & HTTP** | Dio |
-| **Navigation & Routing** | GoRouter / Custom Navigation Extensions |
-| **Architecture Pattern** | Feature-First Clean Architecture |
-| **Local / Theme State** | Hydrated Bloc / Cubit |
+Bookia is a Flutter app I built to practice a complete authentication flow — Welcome, Login, and Register screens, connected to a real API.
+
+The goal wasn't just to make it work, but to organize the code properly: separating the API calls, the state management, and the UI into their own layers instead of mixing everything together.
 
 ---
 
-## 📂 Project Structure
+## What's inside
 
-```text
-lib/
-├── core/
-│   ├── helper/          # Utility classes & helper functions
-│   ├── routes/          # Navigation & GoRouter configuration
-│   ├── theme/           # App themes & Theme Cubit
-│   └── widgets/         # Shared reusable UI widgets
-├── features/
-│   ├── welcome/         # Onboarding & Welcome screens
-│   ├── login/           # Authentication - Login module (Cubit, Data, UI)
-│   ├── register/        # Authentication - Register module (Cubit, Data, UI)
-│   └── home/            # Main dashboard & book feeds (Data, Presentation)
-└── gen/                 # Generated assets & code helper files
-🎥 App Demo & Video Preview
-Watch the video walkthrough to see the Bookia app in action, featuring authentication flows and UI navigation:
+- **Login & Register** connected to a real backend using `Dio`
+- **State management** with `Cubit`, so the UI reacts to Loading / Success / Error states
+- **Token saved locally** with `SharedPreferences`, so the user stays logged in after closing the app
+- **Password visibility toggle** on the password fields
+- **Custom navigation extensions** to keep navigation code short and readable
+- **Request logging** with `PrettyDioLogger` to debug API calls easily during development
 
-[📺 Watch Full App Demo Video (Replace this with your Google Drive, LinkedIn, or YouTube video link)]
+---
 
-(https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17)
+## Project structure
 
+Each feature (`login`, `register`, `home`...) is organized the same way:
+
+```
+feature/
+├── data/
+│   ├── model/     → data models
+│   └── repo/       → API calls (Dio)
+├── cubit/          → app state (loading / success / error)
+└── ui/             → screens & widgets
+```
+
+<details>
+<summary>Full folder structure</summary>
+
+```
+lib
+├── core
+│   ├── helper          → custom extensions
+│   ├── routes
+│   ├── theme/cubit
+│   └── widgets
+│
+├── features
+│   ├── welcome
+│   ├── login
+│   ├── register
+│   └── home
+│
+└── gen
+```
+
+</details>
+
+---
+
+## Tech Stack
+
+- **Flutter** & **Dart**
+- **flutter_bloc** (Cubit) for state management
+- **Dio** for API requests
+- **shared_preferences** for local storage
+- **pretty_dio_logger** for debugging
+
+---
+
+## Demo
+
+https://github.com/user-attachments/assets/b1bba1d7-2395-43a4-85f1-df7d47541f17
 
 https://github.com/user-attachments/assets/fca9c7a2-65d9-4a3f-bcb8-ad020f35e474
 
-
-
 https://github.com/user-attachments/assets/3c4a50f8-dbdd-41fb-8a97-81b35bcb8cf5
 
+---
 
-
-🚀 How to Run the Project
-Follow these steps to set up and run the app locally on your device or emulator:
-
-Prerequisites
-Flutter SDK installed (v3.0.0 or higher recommended).
-
-Android Studio or VS Code configured for Flutter development.
-
-
-To generate code automatically, run one of the following commands in the terminal:
-
-//- **One-time build:**
-  bash
-  dart run build_runner build --delete-conflicting-outputs
+## Getting Started
 
 ```bash
-dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
+git clone <repo-url>
+cd bookia_app
+flutter pub get
+flutter run
+```
 
+---
 
+<div align="center">
 
+Still learning, still building 🚀
 
+</div>

@@ -1,50 +1,24 @@
 
-import 'package:bookia_app/core/helper/app_constants.dart';
 import 'package:bookia_app/core/helper/token.dart';
+import 'package:bookia_app/core/networking/dio_factory.dart';
+import 'package:bookia_app/features/register/data/model/register_request_body.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterRepo {
 
-static Dio dio = Dio();
-   static void initLogger(){
+    static Dio dio =DioFactory.dio!;
 
-    dio.interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 90,
-        enabled: kDebugMode,
-        filter: (options, args){
-            // don't print requests with uris containing '/posts' 
-            if(options.path.contains('/posts')){
-              return false;
-            }
-            // don't print responses with unit8 list data
-            return !args.isResponse || !args.hasUint8ListData;
-          }
-      )
-    );
-
-}
-
- static Future Register ({required String username , 
- required String email ,
- required String password ,
- required String confirmPassword})async{
-  initLogger();
+ static Future<bool> Register (RegisterRequestBody body)async{
+  
   try{
-    var response = await dio.post("https://codingarabic.online/api/register",
+    var response = await dio.post("register",
     data: {
-     "name": username,
-    "email": email,
-    "password": password,
-    "password_confirmation": confirmPassword,
+     "name": body.username,
+    "email": body.email,
+    "password": body.password,
+    "password_confirmation": body.confirmPassword,
+    "city":body.city,
+    "address":body.address
     }
    );
    if(response.statusCode==201){

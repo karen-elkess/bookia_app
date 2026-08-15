@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: LocaleKeys.login.tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                     onTap: () {
-                      context.read<LoginCubit>().Login(email: emailController.text, password: passwordController.text);
+                      context.read<LoginCubit>().login(email: emailController.text, password: passwordController.text);
                     },
                   ),
                   SizedBox(height: 35.r),

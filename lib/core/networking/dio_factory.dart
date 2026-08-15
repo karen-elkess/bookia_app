@@ -7,7 +7,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 class DioFactory {
  static Dio? dio ;
 
- static init(){
+ static void init(){
   dio = Dio(
     BaseOptions(
       baseUrl: "https://codingarabic.online/api/",

@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 class LoginRepo {
  static Dio dio =DioFactory.dio!;
 
-  static Future<bool> Login({required String email ,required String password })async{
+  static Future<bool> login({required String email ,required String password })async{
     try{
      var response =await dio.post("Login",
      data: {

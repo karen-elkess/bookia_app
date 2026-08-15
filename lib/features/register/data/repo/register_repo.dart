@@ -8,7 +8,7 @@ class RegisterRepo {
 
     static Dio dio =DioFactory.dio!;
 
- static Future<bool> Register (RegisterRequestBody body)async{
+ static Future<bool> register (RegisterRequestBody body)async{
   
   try{
     var response = await dio.post("register",
